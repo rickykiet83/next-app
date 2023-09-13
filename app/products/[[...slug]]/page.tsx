@@ -1,6 +1,6 @@
 import React from 'react';
 interface Props {
-	params: { slug: string[] };
+	params: { slug?: string[] };
 	searchParams: { sortOrder: string };
 }
 const ProductPage = ({
