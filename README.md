@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Prisma
 - npx prisma
 - Set up a new Prisma projec: npx prisma init
+- Format prisma: npx prisma format
