@@ -38,4 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - npx prisma
 - Set up a new Prisma projec: npx prisma init
 - Format prisma: npx prisma format
-- Create a migration:
+- Create migrations from your Prisma schema, apply them to the database, generate artifacts :
+  - npx prisma generate {migration name}
+  - npx prisma migrate
+
+## Openssl
+- Generate a random secret string: openssl rand -base64 32

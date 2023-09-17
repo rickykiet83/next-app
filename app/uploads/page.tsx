@@ -22,6 +22,11 @@ const UploadPage = () => {
 			)}
 			<CldUploadWidget
 				uploadPreset='svng8c1h'
+				options={{
+					sources: ['local'],
+					multiple: false,
+					maxFiles: 5,
+				}}
 				onUpload={(result, widget) => {
 					if (result.event != 'success') return;
 
