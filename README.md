@@ -44,3 +44,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Openssl
 - Generate a random secret string: openssl rand -base64 32
+
+
+## Plugins || Providers:
+- https://next-auth.js.org/getting-started/example | https://authjs.dev/
+- https://next.cloudinary.dev/
