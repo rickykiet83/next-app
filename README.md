@@ -49,8 +49,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## React Email:
 - add this line into .gitignore file: .react-email/
 - run preview email: npm run preview-email
+-
 
 ## Plugins || Providers:
 - https://next-auth.js.org/getting-started/example | https://authjs.dev/
 - https://next.cloudinary.dev/
 - https://react.email/
+- https://resend.com/
