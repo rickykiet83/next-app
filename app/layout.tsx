@@ -1,6 +1,7 @@
 import './globals.css';
 
 import AuthProvider from './auth/Provider';
+import GoogleAnalyticsScript from './GoogleAnalyticsScript';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import NavBar from './NavBar';
@@ -19,6 +20,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en' data-theme='winter'>
+			<GoogleAnalyticsScript />
 			<body className={inter.className}>
 				<AuthProvider>
 					<NavBar />
