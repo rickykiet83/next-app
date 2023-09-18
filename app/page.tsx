@@ -10,13 +10,16 @@ export default async function Home() {
 
 	return (
 		<main className='relative h-screen'>
-			<h1>Hello {session && <span>{session.user?.name}</span>}</h1>
+			<h1 className='mb-4'>
+				Hello {session && <span>{session.user?.name}</span>}
+			</h1>
 			<Image
 				src='https://bit.ly/react-cover'
 				alt='Coffee'
-				fill
+				width={200}
+				height={170}
 				className='object-cover'
-				sizes='(max-width: 480px) 100vw, (max-width: 786px) 50vw, 33vw'
+				sizes='(max-width: 480px) 50vw, (max-width: 786px) 50vw, 33vw'
 				quality={100}
 				priority={true}
 			/>
