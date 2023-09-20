@@ -1,18 +1,33 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import ProductCard from './components/ProductCard/ProductCard';
+// import _ from 'lodash';
 import { authOptions } from './api/auth/[...nextauth]/route';
 import coffee from '@/public/images/coffee.jpg';
+import dynamic from 'next/dynamic';
 import { getServerSession } from 'next-auth';
+import { useState } from 'react';
 
-export default async function Home() {
-	const session = await getServerSession(authOptions);
+// const HeavyComponent = dynamic(() => import('./components/HeavyComponent'), {
+// 	ssr: false,
+// 	loading: () => <p>Loading...</p>,
+// });
+
+export default function Home() {
+	// cannot Use this with 'use client'
+	// const session = await getServerSession(authOptions);
+
+	const [isVisible, setIsVisible] = useState(false);
 
 	return (
 		<main className='relative h-screen'>
-			<h1 className='mb-4'>
+			{/* <h1 className='mb-4'>
 				Hello {session && <span>{session.user?.name}</span>}
-			</h1>
+			</h1> */}
+			<h1 className='mb-4'>Hello</h1>
 			<Image
 				src='https://bit.ly/react-cover'
 				alt='Coffee'
@@ -23,6 +38,29 @@ export default async function Home() {
 				quality={100}
 				priority={true}
 			/>
+			{/* <button onClick={() => setIsVisible(true)}>Show Heavy Component</button> */}
+			{/* {isVisible && <HeavyComponent />} */}
+
+			<button
+				onClick={async () => {
+					const _ = (await import('lodash')).default; //lazy loading
+					const users = [{ name: 'c' }, { name: 'b' }, { name: 'a' }];
+
+					const sorted = _.orderBy(users, ['name']);
+					console.log(sorted);
+				}}
+			>
+				Show
+			</button>
 		</main>
 	);
 }
+
+// export async function generateMetadata(): Promise<Metadata> {
+// 	const product = await fetch(''); // get data from ....
+
+// 	return {
+// 		title: 'product.title',
+// 		description: 'product.description',
+// 	};
+// }
