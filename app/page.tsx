@@ -1,20 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import ProductCard from './components/ProductCard/ProductCard';
 // import _ from 'lodash';
-import { authOptions } from './api/auth/[...nextauth]/route';
-import coffee from '@/public/images/coffee.jpg';
 import dynamic from 'next/dynamic';
-import { getServerSession } from 'next-auth';
 import { useState } from 'react';
 
-// const HeavyComponent = dynamic(() => import('./components/HeavyComponent'), {
-// 	ssr: false,
-// 	loading: () => <p>Loading...</p>,
-// });
+const HeavyComponent = dynamic(() => import('./components/HeavyComponent'), {
+	ssr: false,
+	loading: () => <p>Loading...</p>,
+});
 
 export default function Home() {
 	// cannot Use this with 'use client'
@@ -38,10 +32,10 @@ export default function Home() {
 				quality={100}
 				priority={true}
 			/>
-			{/* <button onClick={() => setIsVisible(true)}>Show Heavy Component</button> */}
-			{/* {isVisible && <HeavyComponent />} */}
+			<button onClick={() => setIsVisible(true)}>Show Heavy Component</button>
+			{isVisible && <HeavyComponent />}
 
-			<button
+			{/* <button
 				onClick={async () => {
 					const _ = (await import('lodash')).default; //lazy loading
 					const users = [{ name: 'c' }, { name: 'b' }, { name: 'a' }];
@@ -51,7 +45,7 @@ export default function Home() {
 				}}
 			>
 				Show
-			</button>
+			</button> */}
 		</main>
 	);
 }

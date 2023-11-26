@@ -16,7 +16,7 @@ const WelcomeTemplate = ({ name }: { name: string }) => {
 			<Tailwind>
 				<Body className='bg-white'>
 					<Container>
-						<Text className='font-bold text-3xl'>Hello {name}</Text>
+						<Text className='font-bold text-3xl'>Hello Kiet</Text>
 						<Link href='https://kietpham.dev'>www.kietpham.dev</Link>
 					</Container>
 				</Body>

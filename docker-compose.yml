@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  #database section
+  nextappdb:
+    image: mysql:8.0.29
+    container_name: nextappdb
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: "Passw0rd!"
+      MYSQL_TCP_PORT: 3306
+      MYSQL_DATABASE: nextapp
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+#volumes section
+volumes:
+  mysql_data:
+    name: mysql_data
